@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_zenith_flown_ticket_form" model="ir.ui.view">
+        <field name="name">zenith.flown.ticket.form</field>
+        <field name="model">flown.ticket</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="4" colspan="4">
+                        <field name="date"/>
+                        <field name="pnr_alphanumeric"/>
+                        <field name="iata_ticket_number"/>
+                        <field name="iata_ticket_check_digit"/>
+                        <field name="coupon_order_on_ticket"/>
+                        <field name="coupon_order_on_segment"/>
+                        <field name="Original_iata_ticket_number"/>
+                        <field name="Original_iata_ticket_check_digit"/>
+                        <field name="exchanged_iata_ticket_number"/>
+                        <field name="exchanged_iata_ticket_check_digit"/>
+                        <field name="zenith_coupon_status"/>
+                        <field name="aircraft_type"/>
+                        <field name="arrival_element"/>
+                        <field name="continuation_element"/>
+                        <field name="class_of_service"/>
+                        <field name="airline_designator"/>
+                        <field name="Flight_number"/>
+                        <field name="local_dep_datetime"/>
+                        <field name="local_arr_datetime"/>
+                        <field name="departure_airport"/>
+                        <field name="arrival_airport"/>
+                        <field name="booking_class"/>
+                        <field name="coupon_service"/>
+                        <field name="fare_basis_class"/>
+                        <field name="point_of_sale"/>
+                        <field name="point_of_sale_code"/>
+                        <field name="payment_type_identifier"/>
+                        <field name="customer_name"/>
+                        <field name="coupon_price_taxes_commission"/>
+                        <field name="coupon_price_taxes"/>
+                        <field name="total_turnover_amount"/>
+                        <field name="coupon_commission_amount"/>
+                        <field name="total_taxes_already"/>
+                        <field name="coupon_taxes_amount"/>
+                        <field name="iata_taxes_amount"/>
+                        <field name="airline_taxes_amount"/>
+                        <field name="yq_tax_amount"/>
+                        <field name="yr_tax_amount"/>
+                        <field name="service_fee_taxes_amount"/>
+                        <field name="issuance_tax_amount"/>
+                        <field name="total_amount"/>
+                        <field name="total_amount_excl"/>
+                        <field name="coupon_penalty_amount"/>
+                        <field name="excess_baggage_weight"/>
+                        <field name="excess_baggage_fee_collected"/>
+                        <field name="acm"/>
+                        <field name="adm"/>
+                        <field name="coupon_mileage"/>
+                        <field name="ticket_mileage"/>
+                        <field name="pnr_of_operating_airline"/>
+                        <field name="designator_of_operating_airline"/>
+                        <field name="flight_number_on_operating_airline"/>
+                        <field name="booking_class_on_operating_airline"/>
+                        <field name="pnr_of_marketing_airline"/>
+                        <field name="designator_of_marketing_airline"/>
+                        <field name="flight_number_of_marketing_airline"/>
+                        <field name="sales_currency"/>
+                        <field name="iata_passenger_type"/>
+                        <field name="passenger_civility"/>
+                        <field name="passenger_surname"/>
+                        <field name="passenger_first_name"/>
+                        <field name="datetime_lt_of_issuance"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+     <record id="action_zenith_flown_ticket" model="ir.actions.act_window">
+        <field name="name">Flown Ticket</field>
+        <field name="res_model">flown.ticket</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_zenith_flown_ticket" parent="menu_zenith" name="Flown Ticket"
+              action="action_zenith_flown_ticket"/>
+
+</odoo>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_zenith_credit_limit_form" model="ir.ui.view">
+        <field name="name">zenith.credit.limit.form</field>
+        <field name="model">credit.limit</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="4" colspan="4">
+                        <field name="date"/>
+                        <field name="customer_id"/>
+                        <field name="agency_name"/>
+                        <field name="date_of_payment"/>
+                        <field name="payment_amount"/>
+                        <field name="sale_currency"/>
+                        <field name="available_credit_before"/>
+                        <field name="currency_before"/>
+                        <field name="available_credit_after"/>
+                        <field name="currency_after"/>
+                        <field name="payment_registered"/>
+                        <field name="autherized_credit"/>
+                        <field name="currency_credit"/>
+                        <field name="total_sold"/>
+                        <field name="sold_currency"/>
+                        <field name="total_paid"/>
+                        <field name="total_paid_currency"/>
+                        <field name="reference_number"/>
+                        <field name="sales_report"/>
+                        <field name="fop"/>
+                        <field name="transaction_number"/>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+     <record id="action_zenith_credit_limit" model="ir.actions.act_window">
+        <field name="name">Credit Limit</field>
+        <field name="res_model">credit.limit</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_zenith_credit_limit" parent="menu_zenith" name="Credit Limit"
+              action="action_zenith_credit_limit"/>
+
+</odoo>
