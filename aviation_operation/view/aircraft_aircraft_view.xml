@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_aircraft_aircraft_form" model="ir.ui.view">
+        <field name="name">aircraft.aircraft.form</field>
+        <field name="model">aircraft.aircraft</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="4" >
+                        <field name="aircraft_registration"/>
+                        <field name="aircraft_type"/>
+                        <field name="aircraft_mtow"/>
+                        <field name="seat_configuration_eco"/>
+                        <field name="seat_configuration_bus"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="aircraft_aircraft_tree" model="ir.ui.view">
+        <field name="name">aircraft.aircraft.tree</field>
+        <field name="model">aircraft.aircraft</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="aircraft_registration"/>
+                <field name="aircraft_type"/>
+                <field name="aircraft_mtow"/>
+                <field name="seat_configuration_eco"/>
+                <field name="seat_configuration_bus"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_aircraft_aircraft" model="ir.actions.act_window">
+        <field name="name">Aircraft</field>
+        <field name="res_model">aircraft.aircraft</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_aircraft" name="Aircraft" sequence="101" parent="menu_operation" action="action_aircraft_aircraft"/>
+
+
+</odoo>

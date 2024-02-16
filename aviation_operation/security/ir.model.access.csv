@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_operation_operation,operation.operation.transaction,model_operation_operation,base.group_user,1,1,1,0
+access_airport_airport,airport.airport,model_airport_airport,base.group_user,1,1,1,0
+access_aircraft_aircraft,aircraft.aircraft.transaction,model_aircraft_aircraft,base.group_user,1,1,1,0
+access_crew_crew,crew.crew.transaction,model_crew_crew,base.group_user,1,1,1,0
+access_operation_operation_line,operation.operation.line,model_operation_operation_line,base.group_user,1,1,1,0
+access_cargo_cargo_line,cargo.cargo.line,model_cargo_cargo_line,base.group_user,1,1,1,0

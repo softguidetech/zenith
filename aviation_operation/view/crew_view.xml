@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_crew_crew_form" model="ir.ui.view">
+        <field name="name">crew.crew.form</field>
+        <field name="model">crew.crew</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                    <group string="Personal Information" col="2">
+                        <field name="f_name"/>
+                        <field name="s_name"/>
+                        <field name="th_name"/>
+                        <field name="l_name"/>
+                        <field name="gender"/>
+                        <field name="nationality_id"/>
+                        <field name="dob"/>
+                        <field name="pob"/>
+
+                    </group>
+
+                    <group string="Passport Details" col="2">
+                        <field name="passport_no"/>
+                        <field name="place_of_issue"/>
+                        <field name="date_of_issue"/>
+                        <field name="date_of_expiry"/>
+                    </group>
+
+                    <group string="Job Information" col="2">
+                        <field name="job_id"/>
+                        <field name="department_id"/>
+                        <field name="department_manager_id"/>
+                        <field name="date_of_join"/>
+                    </group>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_crew_crew" model="ir.actions.act_window">
+        <field name="name">Crew</field>
+        <field name="res_model">crew.crew</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="crew_crew_tree" model="ir.ui.view">
+        <field name="name">crew.crew.tree</field>
+        <field name="model">crew.crew</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="f_name"/>
+                <field name="l_name"/>
+                <field name="dob"/>
+                <field name="pob"/>
+                <field name="passport_no"/>
+                <field name="job_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem id="menu_crew" name="Crew" sequence="20" parent="menu_operation"
+              action="action_crew_crew"/>
+
+</odoo>

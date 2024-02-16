@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_operation_operation_form" model="ir.ui.view">
+        <field name="name">operation.operation.form</field>
+        <field name="model">operation.operation</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="submit" string="Submit" type="object"
+                            states="draft" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,submitted"/>
+                </header>
+                <sheet>
+
+
+                    <notebook>
+                        <page string="Flight Data">
+                            <group colspan="2" col="2" >
+                                <field name="from_location"/>
+                                <field name="to_location"/>
+                                <field name="flight_no"/>
+                                <field name="flight_date"/>
+                                <field name="aircraft_id"/>
+                                <field name="aircraft_type"/>
+                                <field name="aircraft_mtow"/>
+                                <field name="flight_type"/>
+                                <field name="customer"/>
+                                <field name="std" widget="float_time"/>
+                                <field name="sta" widget="float_time"/>
+
+                                <label for="chock_off" string="ATD / Chocks Off"/>
+                                <div>
+                                    <field name="chock_off" widget="float_time"/>
+                                </div>
+                                <label for="airborne" string="ATD / Airborne"/>
+                                <div>
+                                    <field name="airborne" widget="float_time"/>
+                                </div>
+
+                                <label for="chock_on" string="ATA / Landing"/>
+                                <div>
+                                    <field name="landing" widget="float_time"/>
+                                </div>
+                                <label for="chock_on" string="ATA / Chocks On"/>
+                                <div>
+                                    <field name="chock_on" widget="float_time"/>
+                                </div>
+                                <field name="flight_time" widget="float_time"/>
+                                <field name="block_time" widget="float_time"/>
+                            </group>
+                            <!--                            </group>-->
+                        </page>
+                        <page string="Crew Data">
+                            <group col="2">
+                                <field name="line_ids">
+                                    <tree  nolabel="1" editable="bottom">
+                                        <field name="position_name"/>
+                                        <field name="crew_id" string="Name"/>
+                                        <field name="passport_no"/>
+                                        <field name="dob"/>
+                                        <field name="gender"/>
+                                        <field name="nationality_id"/>
+
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                        <page string="Fuel Data">
+                            <group  col="2">
+
+                            </group>
+                        </page>
+                        <page string="Passenger Data">
+                            <group col="2">
+                                <field name="passenger_business"/>
+                                <field name="passenger_economy"/>
+                            </group>
+                        </page>
+
+                        <page string="Cargo Data">
+                            <group  col="2">
+                                <field name="cargo_line_ids">
+                                    <tree  nolabel="1" editable="bottom">
+                                        <field name="awb_number"/>
+                                        <field name="number_of_pieces"/>
+                                        <field name="total_weight"/>
+                                        <field name="nature"/>
+                                        <button name="holds" string="Add Holds" type="object"
+                                                class="oe_highlight"/>
+                                    </tree>
+                                </field>
+
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_operation_operation" model="ir.actions.act_window">
+        <field name="name">Operations</field>
+        <field name="res_model">operation.operation</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="operation_operation_tree" model="ir.ui.view">
+        <field name="name">operation.operation.tree</field>
+        <field name="model">operation.operation</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="from_location"/>
+                <field name="to_location"/>
+                <field name="aircraft_id"/>
+                <field name="flight_no"/>
+                <field name="flight_type"/>
+                <field name="aircraft_type"/>
+                <field name="flight_date"/>
+                <field name="customer"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem id="menu_operation" name="Operation" sequence="7" web_icon="aviation_operation,static/description/icon.jpg"/>
+    <menuitem id="menu_operation_operation" parent="menu_operation" name="Aviation Operation"
+              action="action_operation_operation"/>
+
+</odoo>

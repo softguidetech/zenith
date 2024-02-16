@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_airport_airport_form" model="ir.ui.view">
+        <field name="name">airport.airport.form</field>
+        <field name="model">airport.airport</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="4" >
+                        <field name="name"/>
+                        <field name="iata_code"/>
+                        <field name="icao_code"/>
+                        <field name="city_id"/>
+                        <field name="country_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="airport_airport_tree" model="ir.ui.view">
+        <field name="name">airport.airport.tree</field>
+        <field name="model">airport.airport</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="iata_code"/>
+                <field name="icao_code"/>
+                <field name="city_id"/>
+                <field name="country_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_airport_airport" model="ir.actions.act_window">
+        <field name="name">Airport</field>
+        <field name="res_model">airport.airport</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_airport" name="Airports" sequence="100" parent="menu_operation" action="action_airport_airport"/>
+
+
+</odoo>
